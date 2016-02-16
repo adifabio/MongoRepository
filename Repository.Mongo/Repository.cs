@@ -61,6 +61,11 @@ namespace Repository.Mongo
             return Query(filter).ToEnumerable();
         }
 
+        public virtual IEnumerable<T> Find()
+        {
+            return Find();
+        }
+
         public IEnumerable<T> Find(Expression<Func<T, bool>> filter, int pageIndex, int size)
         {
             return Find(filter, i => i.Id, pageIndex, size);
